@@ -1,0 +1,9 @@
+<div class="post-list-filterable" fxLayout = "row wrap" fxFlex = "100" fxLayoutAlign = "space-evenly center" *ngIf = "!blogIsloading && !hasErrored" >
+  <app-blog-post *ngFor = "let blogpost of filteredPosts; let i = index" [postItem] = "blogpost" [currentIndex] = "postsFiltered() ? posts.length - filteredPosts.length : i"  fxLayoutAlign = "space-evenly center" fxFlex = "33" fxFlex.lt-md = "100"></app-blog-post>
+  <h1 *ngIf = "filteredPosts.length === 0 || posts.length === 0 " fxFlex = "100" fxFlex.lt-md = "90">There are currently no blogs for this search, please try a different set of filters or try again later for more posts!</h1>
+</div>
+<p *ngIf = "hasErrored">Blogs could not be loaded, please refresh the page and try again</p>
+<div class="wrapper" *ngIf = "blogIsloading">
+  <div  class="lds-ripple"><div></div><div></div></div>
+  <p>Blogs are loading. Please wait</p>
+</div>

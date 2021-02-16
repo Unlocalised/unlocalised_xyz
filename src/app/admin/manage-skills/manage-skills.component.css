@@ -1,0 +1,222 @@
+/* General styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input{
+  height:30px;
+  border: 1px solid  #9caace;
+  border-radius: 5px;
+}
+
+textarea{
+  border-radius: 5px;
+  border: 1px solid  #9caace;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.main{
+  background: #f4f4f4;
+}
+
+button.add{
+  background: #73d378;
+}
+button.remove{
+  background: #fc4d4d;
+}
+button.update{
+  background: #9bccd3;
+}
+
+#skill-manage-a{
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+#skill-manage-a:after,
+#skill-manage-b:after,
+#skill-manage-c:after{
+  content:'';
+  display: block;
+  text-align: center;
+  width: 90%;
+  border-bottom: 2px solid #ccc;
+  opacity: 0.5;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+#skill-manage-a h2{
+  text-align: center;
+}
+
+
+#skill-manage-a button{
+  /* margin: 1rem auto; */
+  width: 300px;
+  padding: 0.2rem 1rem;
+  margin: 0.5rem auto;
+}
+
+#skill-manage-a .button-panel-group{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#skill-manage-b{
+  padding-bottom: 2rem;
+}
+
+#skill-manage-b h2{
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
+#skill-manage-b .container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#skill-manage-b .container button{
+  padding: 0.5rem 2rem;
+  margin: 1rem auto;
+  width: 400px;
+
+}
+
+#skill-manage-c label {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+#skill-manage-c .skill-group{
+  display: inline-block;
+  width: 50%;
+}
+
+#skill-manage-c .skill-group label{
+  display: block;
+  text-align: center;
+}
+
+#skill-manage-c .skill-group input{
+  display: block;
+  width: 50%;
+  margin: 0.5rem auto;
+}
+
+#skill-manage-c button[type = 'submit']{
+  display: block;
+  margin: 1rem auto;
+  width: 40%;
+  background: #333;
+  color: #fff;
+}
+
+#skill-manage-c .skill-details{
+  display: block;
+  text-align: center;
+}
+
+#skill-manage-c .skill-details .button-ctrl{
+  display: block;
+  text-align: center;
+}
+
+#skill-manage-c .skill-details .button-ctrl button{
+    width: 20%;
+    margin: 0.52em 0.5rem;
+    padding: 0.1rem;
+}
+
+div[formarrayname = 'skillAchievements'],
+div[formarrayname = 'skillDetails']{
+  margin-top: 1rem;
+  display: inline-block;
+  width: 45%;
+}
+
+div[formarrayname = 'skillAchievements'] textarea,
+div[formarrayname = 'skillDetails'] textarea{
+  resize: none;
+  margin: 0.2rem 0.5rem;
+  width: 90%;
+  height: 70px;
+}
+
+#skill-manage-c button{
+  display: inline-block;
+}
+
+#skill-manage-c .work-history input{
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 200px;
+  height: 80px;
+}
+
+#skill-manage-d{
+  padding-bottom: 2rem;
+}
+
+#skill-manage-d h2{
+  text-align: center;
+}
+
+#skill-manage-d button{
+  display: block;
+  margin: 1rem auto;
+  width: 75%;
+  border-bottom: 2px solid #333;
+}
+
+#skill-manage-d span{
+  color: #fff;
+  background: darkred;
+}
+
+@media(max-width: 960px){
+  #skill-manage-c .skill-group{
+    display: block;
+    width: 100%;
+  }
+
+  #skill-manage-c .skill-group input{
+    display: block;
+    width: 90%;
+    margin: 0.5rem auto;
+  }
+
+  #skill-manage-c .skill-details .button-ctrl button{
+      display: block;
+      width: 80%;
+      margin: 0.52rem auto;
+      padding: 0.1rem;
+  }
+
+  div[formarrayname = 'skillAchievements'],
+  div[formarrayname = 'skillDetails']{
+    margin: 1rem auto;
+    display: block;
+    width: 90%;
+  }
+
+  h2{
+    width: 75%;
+    display: block;
+    margin: auto;
+  }
+
+}

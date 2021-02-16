@@ -1,0 +1,3 @@
+<mat-accordion class="projects-accordion">
+  <app-project-item *ngFor = "let project of projects; let i = index" [numProjects] = "projects.length" [projectItem] = "project" [myIndex] = "i" (shownProjectChanged) = "changeCurrentProjectShown($event)" [currentIndex] = "currentStep" ></app-project-item>
+</mat-accordion>

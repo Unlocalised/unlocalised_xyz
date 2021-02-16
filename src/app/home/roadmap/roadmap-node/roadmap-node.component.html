@@ -1,0 +1,7 @@
+<button mat-fab attr.aria-label="{{nodeDescription}}"
+(mouseenter) ="state = 'show'"
+[@anim]= 'state'
+(mouseleave) = "state = 'hide'"
+[ngStyle]="{background: 'url(assets/' + nodeBackgroundImagePath}">
+  <h6 *ngIf = "state === 'show'" [attr.color] = "textColor">{{nodeProjectTitle}}</h6>
+</button>

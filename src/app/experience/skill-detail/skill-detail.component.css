@@ -1,0 +1,53 @@
+.skill-detail-dialog{
+  /* background-color: #f5ce8f; */
+  background-color: cornsilk;
+  /* border: 5px dashed goldenrod; border-radius: 5px; */
+  border: 5px solid grey; border-radius: 5px;
+  padding:0;
+  margin:0;
+  font-family: 'Press Start 2P', cursive;
+}
+
+.skill-detail-dialog h2, h6{
+  font-family: 'Press Start 2P', cursive;
+  width:80%;
+  padding-top: 0.5rem;
+  text-align: center;
+}
+.skill-detail-dialog span.skill-info{
+  margin-left: 12em;
+  padding-top: 0.5rem;
+}
+
+.skill-detail-dialog span.skill-title{
+  margin-left: 1em;
+}
+
+section.skill-summary{
+  border-left: 2px solid black;
+}
+
+section.skill-image{
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+section.skill-breakdown{
+  border-top: 2px solid black;
+  padding-top: 1rem;
+
+  background-color:aquamarine;
+}
+section.skill-achievements{
+  border-right: 2px solid black;
+}
+
+@media screen and (max-width: 960px){
+  .skill-detail-dialog span.skill-info{
+    margin-left: 2em;
+    max-width:100vw;
+  }
+
+  .skill-detail-dialog h6{
+    width:95%;
+  }
+}

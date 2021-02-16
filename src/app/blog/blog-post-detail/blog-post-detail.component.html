@@ -1,0 +1,30 @@
+<section fxLayout = "row wrap" fxLayoutAlign = "space-around center" fxFlex = "100" class = "project-details" *ngIf = "!blogPostIsloading">
+  <app-info-section
+  titleSize = 'h1'
+  titleText = '{{shownBlog.title}}'
+  paragraphText = '{{shownBlog.subtitle}}'
+  backgroundImage = '{{shownBlog.mainBlogImagePath}}'
+  imageAlt = 'blog-post-image'
+  fxFlex = "100"
+  textColor ="white"
+  [showInitially] = "true" *ngIf = "!blogPostIsloading"></app-info-section>
+
+<section class="post-content" *ngFor = "let section of shownBlog.sections; let i = index;" fxLayoutAlign = "space-around center" fxFlex = "100">
+  <h1 *ngIf = "section.startsWith('*')" fxFlex = "70" class = "section-header" [ngClass] = "i === 0 ? 'first' : ''">
+    {{section.substring(1)}}
+  </h1>
+  <img *ngIf = "section.startsWith('^')" [src] = "section.substring(1)" fxFlex = "40" fxFlex.lt-md = "70" class = "section-image" [ngClass] = "i === 0 ? 'first' : ''">
+  <p *ngIf = "section.startsWith('!')" class = "post-date" fxFlex = "70" class = "post-date-author">
+    Posted on <strong>{{section.substring(1).split('¬')[0]}}</strong> <span *ngIf = "section.substring(1).split('¬').length > 1"> by <strong>{{section.substring(1).split("¬")[1]}}</strong></span>
+  </p>
+  <h3 *ngIf = "section.startsWith('?')" fxFlex = "70" class = "section-passage" [ngClass] = "i === 0 ? 'first' : ''">
+    {{section.substring(1)}}
+  </h3>
+</section>
+
+</section>
+<div class="wrapper" *ngIf = "blogPostIsloading">
+  <div  class="lds-ripple"><div></div><div></div></div>
+  <p>Blog post is loading. Please wait</p>
+</div>
+

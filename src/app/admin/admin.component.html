@@ -1,0 +1,33 @@
+<section class="filler">
+
+</section>
+<section id="admin-login" *ngIf = "!isLoggedIn()">
+  <div class="container">
+    <form  [formGroup]="loginForm" (ngSubmit)="login()">
+      <h2>Please log into the admin console</h2>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input name = "email" type="email" formControlName = "email">
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" name = "password" formControlName = "password">
+      </div>
+      <button mat-raised-button type="submit">Login</button>
+    </form>
+  </div>
+</section>
+
+<section id="admin-panel" *ngIf = "isLoggedIn()" >
+  <h2>Welcome to the admin panel</h2>
+  <div class="flex-container">
+    <button mat-raised-button type="button" routerLink = "/admin/manage-projects">Manage your projects</button>
+    <button mat-raised-button type="button" routerLink = "/admin/manage-blogs">Manage your blog posts</button>
+    <button mat-raised-button type="button" routerLink = "/admin/manage-skills">Manage your skills</button>
+  </div>
+  <section id="logout" *ngIf = "isLoggedIn()">
+    <button mat-raised-button type="button" (click) = "logout()">Logout</button>
+  </section>
+</section>
+
+

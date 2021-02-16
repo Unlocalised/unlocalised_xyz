@@ -1,0 +1,92 @@
+.footer-items app-social-icon{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  /* background-color: transparent; */
+
+}
+.footer-items app-social-icon:hover{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 1%;
+  padding-top: 1%;
+  cursor: pointer;
+}
+
+h1{
+  margin:auto;
+  z-index: -100;
+}
+
+.footer-top hr {
+  background-color:black;
+  height:1px;
+  width:35%;
+  border:1px solid black;
+  display: inline-block;
+  margin: 0 5%;
+  z-index: -100;
+}
+
+.footer-top h1{
+  display: inline-block;
+  margin: 0 2%;
+  z-index: -100;
+}
+
+.with-before-element{
+  text-align:center;
+  z-index: -100;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: red;
+  max-width: 60%;
+  margin: 0 auto;
+  z-index: -100;
+}
+
+.with-before-element {
+  position: relative;
+  z-index: -100;
+}
+
+.with-before-element h3 {
+  margin: 0;
+  z-index: -100;
+}
+
+.with-before-element h2 {
+  margin:0;
+  z-index: -100;
+}
+.with-before-element:before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  background: black;
+  max-width: 32%;
+  left: 20%; /* one way to center */
+  transform: translate(-50%, 0);
+  z-index: -100;
+}
+
+.with-before-element:after {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 10px;
+  width: 100%;
+  height: 2px;
+  background: black;
+  max-width: 32%;
+  left: 80%;
+  transform: translate(-50%, 0);
+
+}

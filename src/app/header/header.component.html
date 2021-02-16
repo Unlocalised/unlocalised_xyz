@@ -1,0 +1,31 @@
+<header #header  [ngClass] = "{sticky: isSticky, 'header-drawer-expanded': sidenav.opened}" >
+    <button mat-icon-button (click)="sidenav.toggle()" fxShow="true" fxHide.gt-sm>
+      <mat-icon>menu</mat-icon>
+    </button>
+
+    <button mat-fab aria-label="Home" class = "img-wrap" fxHide.lt-md div fxLayout="row" fxLayoutAlign="start center" routerLink = ''>
+      <img id = "logo" src = 'assets/unlocalised-logo.png' alt="" [ngClass] = "{'img-sticky': isSticky, 'header-drawer-expanded': sidenav.opened}" >
+    </button>
+
+    <section class = "header-menu-items" fxShow="true" fxHide.lt-md fxLayout="row" fxLayoutAlign="end center" >
+      <a routerLink = '' mat-button>Home</a><span>|</span>
+      <a routerLink = '/projects' mat-button>Projects</a><span>|</span>
+      <a routerLink = '/blog' mat-button>Blog</a><span>|</span>
+      <a routerLink = '/contact' mat-button>Contact</a><span>|</span>
+      <a routerLink = '/experience' mat-button>Experience</a>
+    </section>
+
+    <mat-sidenav-container fxFlexFill fxHide.gt-sm id = "mobile-nav">
+      <mat-sidenav #sidenav>
+        <mat-nav-list>
+          <a routerLink = '' mat-list-item (click) = "sidenav.close()">Home</a>
+          <a routerLink = '/projects' mat-list-item (click) = "sidenav.close()">Projects</a>
+          <a routerLink = '/blog' mat-list-item (click) = "sidenav.close()">Blog</a>
+          <a routerLink = '/contact' mat-list-item (click) = "sidenav.close()">Contact</a>
+          <a routerLink = '/experience' mat-list-item (click) = "sidenav.close()">Experience</a>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content fxFlexFill></mat-sidenav-content>
+    </mat-sidenav-container>
+
+  </header>

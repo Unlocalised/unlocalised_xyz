@@ -1,0 +1,76 @@
+/* General styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input{
+  height:30px;
+  border: 2px solid  #9caace;
+  padding: 0.3rem;
+}
+
+/* Utility */
+.container{
+  max-width: 1920px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.filler{
+  height: 7vh;
+}
+#admin-login h2{
+  text-align: center;
+}
+#admin-login form{
+  background: #f4f4f4;
+  border: 3px solid #9caace;;
+  padding: 2rem;
+  border-radius: 5px;
+}
+
+#admin-login form .form-group label,
+#admin-login form .form-group input,
+#admin-login form button{
+  display: block;
+  margin: 0.4rem auto;
+  width: 60%;
+}
+
+#admin-panel{
+  background: #f4f4f4;
+  border: 3px solid #9caace;
+  height: 250px;
+  width: 70%;
+  margin: auto;
+}
+
+.flex-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#admin-panel h2{
+  text-align: center;
+  margin-top: 1rem;
+}
+#admin-panel button{
+  width: 20%;
+  margin: 0.5rem 0.5rem;
+  background: #ccc;
+
+}
+
+#admin-panel button:hover{
+  opacity: 0.8;
+}
+
+
+#logout button{
+  display: block;
+  margin: 2rem auto;
+  width: 70%;
+}

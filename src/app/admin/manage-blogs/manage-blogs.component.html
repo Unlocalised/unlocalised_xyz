@@ -1,0 +1,107 @@
+<div class = "main">
+<section id="blog-manage-a">
+  <div class="container">
+    <h2>Manage Blogs</h2>
+    <div class="button-panel-group">
+      <button mat-raised-button (click) = "onAddPost()" class = "add">Add a new blog post</button>
+      <button mat-raised-button (click) = "onRemovePost()" class = "remove">Remove a blog post</button>
+      <button mat-raised-button (click) = "onUpdatePost()" class = "update">Update a blog post</button>
+    </div>
+  </div>
+</section>
+
+<!-- Section B:  Edit Blogs -->
+<section id="blog-manage-b" class="blog-details-edit" *ngIf = "isEditing">
+  <h2>Please select a blog post to edit</h2>
+  <div class="container">
+    <button  mat-raised-button type = "button" class = "update" *ngFor = "let post of fetchedPosts" (click) = "populatePostData(post)">{{post.title}}</button>
+  </div>
+    <h2 *ngIf= "isEditing"> Currently editing {{actionedPost ? '' : 'no'}} blog post {{actionedPost ? actionedPost.title : ''}}</h2>
+</section>
+
+<!-- Section C : Add new post details -->
+<section id="blog-manage-c" class="blog-details-add" *ngIf = "isAdding || isEditing">
+  <div class="container">
+    <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+
+      <div class="input-group">
+        <label for="title">Blog title:</label>
+        <input type="text" name = "title" formControlName = "title">
+
+        <label for="subtitle">Blog subtitle:</label>
+        <input type="text" name = "subtitle" formControlName = "subtitle">
+      </div>
+
+      <div class="input-group">
+        <label for="excerpt">Blog excerpt:</label>
+        <textarea type="text" name = "excerpt" formControlName = "excerpt" rows = "20"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label>Tags for the blog:</label>
+        <div formArrayName = "tags" *ngFor = "let tag of tags.controls; let i = index">
+            <input type="text" [formControlName] = "i">
+        </div>
+        <div class="button-ctrl">
+          <button  mat-raised-button type = "button" class = "add" (click) = "addTag()">Add tag</button>
+          <button  mat-raised-button type = "button" class = "remove" (click) = "removeTag()">Remove tag</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="headerImage">Header Image:</label>
+        <input type="text" name = "headerImage" formControlName = "headerImage">
+
+        <label for="bottomImage">Bottom Image</label>
+        <input type="text" name = "bottomImage " formControlName = "bottomImage">
+      </div>
+
+      <div class="input-group">
+        <label>Sections for the blog:</label>
+        <div formArrayName = "sections" *ngFor = "let section of sections.controls; let i = index">
+            <textarea type="text" name = "section" [formControlName] = "i" rows = "20"></textarea>
+            <div class="btn-group">
+              <button  mat-raised-button type = "button" title = "Add paragraph content" (click) = "addParagraph(i)">?</button>
+              <button mat-raised-button type = "button" title = "Add an image path" (click) = "addImagePath(i)">^</button>
+              <button mat-raised-button type = "button" title = "Add blog meta" (click) = "addMeta(i)">!</button>
+              <button mat-raised-button type = "button" title = "Add a heading" (click) = "addHeading(i)">*</button>
+            </div>
+        </div>
+        <div class="button-ctrl">
+          <button  mat-raised-button type = "button" class = "add" (click) = "addSection()">Add section</button>
+          <button  mat-raised-button type = "button" class = "remove" (click) = "removeSection()">Remove section</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Images for the blog:</label>
+        <div formArrayName = "imagesForPost" *ngFor = "let imagePath of imagesForPost.controls; let i = index">
+          <input type="text" [formControlName] = "i">
+        </div>
+        <div class="button-ctrl">
+          <button  mat-raised-button type = "button" class = "add" (click) = "addImage()">Add image path</button>
+          <button  mat-raised-button type = "button" class = "remove" (click) = "removeImage()">Remove image path</button>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label for="imagesPerParagraph">Image Per paragraph</label>
+        <input type="text" name = "imagesPerParagraph " formControlName = "imagesPerParagraph">
+      </div>
+
+      <button mat-raised-button type="submit">{{isEditing ? 'Update post in database' : 'Add post to database'}}</button>
+    </form>
+  </div>
+</section>
+
+<!-- Section D:  Remove Blog post -->
+<section id="blog-manage-d" class="blog-details-remove" *ngIf = "isDeleting">
+  <div class="container">
+    <h2>Please click on a blog post to delete <span>This cannot be undone</span></h2>
+    <button  mat-raised-button type = "button" class = "remove" *ngFor = "let post of fetchedPosts" (click) = "removePost(post._id)">{{post.title}}</button>
+    <h2 *ngIf = "deletedPost"><span>Project with summary {{deletedPost.title}} successfully deleted</span></h2>
+  </div>
+
+</section>
+
+</div>

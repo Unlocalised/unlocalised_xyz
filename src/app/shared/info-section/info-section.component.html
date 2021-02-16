@@ -1,0 +1,10 @@
+<section class="info-wrapper" [@scrollAnimation]="state" fxFlex = "100" [ngStyle]="{'background': 'url(' + backgroundImage + ') center center /cover'}">
+  <h1 *ngIf = "titleText && titleSize == 'h1'" [ngStyle] = '{color: textColor}'>{{titleText}}</h1>
+  <h2 *ngIf = "titleText && titleSize == 'h2'" [ngStyle] = '{color: textColor}'>{{titleText}}</h2>
+  <h3 *ngIf = "titleText && titleSize == 'h3'" [ngStyle] = '{color: textColor}'>{{titleText}}</h3>
+  <h4 *ngIf = "titleText && titleSize == 'h4'" [ngStyle] = '{color: textColor}'>{{titleText}}</h4>
+  <h3 *ngFor = "let para of paragraphs" [ngStyle] = '{color: textColor}'>{{para}}</h3>
+
+  <!-- <img *ngIf = "backgroundGradient" class = "section-background {{backgroundGradient}}"> -->
+  <!-- <img *ngIf = "backgroundImage" src = {{backgroundImage}} alt="coding image"> -->
+</section>

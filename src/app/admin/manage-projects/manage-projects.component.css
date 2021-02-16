@@ -1,0 +1,131 @@
+/* General styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input{
+  height:30px;
+  border: 1px solid  #9caace;
+}
+
+button.add{
+  background: #73d378;
+}
+button.remove{
+  background: #fc4d4d;
+}
+button.update{
+  background: #9bccd3;
+}
+
+input:focus{
+  outline: none;
+}
+
+/* Utility */
+.container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+#project-edit-a{
+  background:  #9caace;
+  text-align: center;
+}
+
+#project-edit-a .button-panel-group{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+#project-edit-a .button-panel-group button{
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  width:30%;
+
+}
+
+#project-edit-a .button-panel-group button:hover{
+  opacity: 0.8;
+}
+
+#project-edit-b{
+  background: rgb(253, 240, 188);
+}
+
+#project-edit-b form{
+
+  padding-bottom: 1rem;
+}
+
+#project-edit-b form .form-group{
+  width: 100%;
+  text-align: center;
+}
+
+#project-edit-b form .form-group  textarea,
+#project-edit-b form .form-group  input{
+  display: block;
+  margin: 0.2rem auto;
+  width: 90%;
+  resize: none;
+  border-radius: 5px;
+}
+
+#project-edit-b form .form-group > button{
+  width: 40%;
+  display: inline-block;
+  margin: 0 0.4rem;
+}
+
+#project-edit-b form .form-group > label,
+#project-edit-b form .form-group > h4{
+  display: block;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+#project-edit-b form .project-info button{
+  display: block;
+  width: 90%;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+
+#project-edit-c h2,
+#project-edit-d h2{
+  text-align: center;
+}
+
+#project-edit-c span{
+  color: #fff;
+  background: darkred;
+}
+
+#project-edit-c button,
+#project-edit-d button{
+  display: block;
+  margin: 1rem auto;
+  width: 75%;
+  border-bottom: 2px solid #333;
+}
+
+#project-edit-c button:hover{
+  opacity: 0.8;
+}
+
+@media(max-width: 960px){
+
+  h2{
+    width: 75%;
+    display: block;
+    margin: auto;
+  }
+
+}

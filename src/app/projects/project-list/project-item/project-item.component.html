@@ -1,0 +1,51 @@
+<mat-expansion-panel [expanded]="myIndex === currentIndex" (opened) = "resetStep()" hideToggle>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+
+    </mat-panel-title>
+    <mat-panel-title>
+      {{projectItem.summaryTitle}}
+    </mat-panel-title>
+  </mat-expansion-panel-header>
+
+  <mat-action-row>
+    <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxFlex = "100" >
+      <div fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex = "50" fxFlex.lt-md = "100" >
+        <div fxLayout="column wrap" fxLayoutAlign="space-evenly center" fxFlex = "100" >
+          <h3 fxFlex = "100">Project Summary:</h3>
+          <p fxFlex = "100">{{projectItem.summaryDetail}}</p>
+          <div fxLayout="row" fxLayoutAlign="space-evenly center" fxFlex = "100" class = "flex-layout-container" >
+            <div class="notepaper" fxFlex = "100" style = "text-align: center">
+              <figure class="quote">
+                <blockquote class="curly-quotes" >
+                  {{projectItem.projectQuote}}
+                </blockquote>
+                <figcaption class="quote-by">— <strong>{{projectItem.quoteCitation}}</strong></figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxFlex = "100" class = "flex-layout-container">
+          <h3 fxFlex = "100">Moods for the project:</h3>
+          <app-project-mood *ngFor = "let mood of projectItem.projectMoods" [moodItem] = "mood" fxFlex = "50" fxFlex.lt-md = "100"></app-project-mood>
+        </div>
+        <button id = "projectDetails" mat-raised-button fxFlex = "100" fxFill routerLink = "/projects/{{myIndex}}">See the details</button>
+      </div>
+      <div fxFlex.lt-md = "100" fxShow = "false" fxShow.lt-md = "true" style = "height:1rem;"></div>
+      <div fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex = "33" fxFlex.lt-md = "100" >
+        <div fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex = "100" >
+          <img [src] = "projectItem.projectSummaryImagePath" fxFill>
+          <span class = "block-heading"style = "">Technologies Used:</span>
+          <mat-chip-list aria-label="Technologies used" fxFlex = "100">
+            <mat-chip *ngFor = "let chips of projectItem.technologiesUsed">{{chips}}</mat-chip>
+          </mat-chip-list>
+
+        </div>
+
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-evenly center" fxFlex = "100" style = "padding-top: 1rem;" >
+        <button mat-raised-button fxFlex = "100" (click)="nextStep();" *ngIf = "myIndex !== projectsLength - 1">Expand the next project</button>
+      </div>
+    </div>
+  </mat-action-row>
+</mat-expansion-panel>

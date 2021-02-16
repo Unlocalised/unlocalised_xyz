@@ -1,0 +1,207 @@
+/* General styling */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input{
+  height:30px;
+  border: 1px solid  #9caace;
+  border-radius: 5px;
+}
+
+textarea{
+  border-radius: 5px;
+  border: 1px solid  #9caace;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.main{
+  background: #f4f4f4;
+}
+
+button.add{
+  background: #73d378;
+}
+button.remove{
+  background: #fc4d4d;
+}
+button.update{
+  background: #9bccd3;
+}
+
+#blog-manage-a{
+  padding-top: 4rem;
+  background: #f4f4f4;
+  padding-bottom: 2rem;
+}
+
+#blog-manage-a:after,
+#blog-manage-b:after,
+#blog-manage-c:after{
+  content:'';
+  display: block;
+  text-align: center;
+  width: 90%;
+  border-bottom: 2px solid #ccc;
+  opacity: 0.5;
+  margin: 0 auto;
+  margin-top: 5rem;
+}
+
+#blog-manage-a h2{
+  text-align: center;
+}
+
+
+#blog-manage-a button{
+  /* margin: 1rem auto; */
+  width: 300px;
+  padding: 0.2rem 1rem;
+  margin: 0.5rem auto;
+}
+
+#blog-manage-a .button-panel-group{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#blog-manage-b{
+  padding-bottom: 2rem;
+}
+
+#blog-manage-b h2{
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
+#blog-manage-b .container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#blog-manage-b .container button{
+  padding: 0.5rem 2rem;
+  margin: 1rem auto;
+  width: 400px;
+
+}
+
+#blog-manage-c{
+  padding-bottom: 2rem;
+}
+#blog-manage-c .input-group{
+  display: block;
+  text-align: center;
+}
+
+#blog-manage-c .input-group button{
+  margin: 0.5rem 0.5rem;
+  width: 25%;
+  display: block;
+}
+
+#blog-manage-c .input-group:nth-child(3) > div.button-ctrl,
+#blog-manage-c .input-group:nth-child(5) > div.button-ctrl,
+#blog-manage-c .input-group:nth-child(6) > div.button-ctrl{
+  display: block;
+  text-align: center;
+}
+
+#blog-manage-c .input-group:nth-child(3) > div.button-ctrl button,
+#blog-manage-c .input-group:nth-child(5) > div.button-ctrl button,
+#blog-manage-c .input-group:nth-child(6) > div.button-ctrl button{
+  display: inline-block;
+}
+
+#blog-manage-c .input-group:nth-child(3) > div.button-ctrl input,
+#blog-manage-c .input-group:nth-child(5) > div.button-ctrl input,
+#blog-manage-c .input-group:nth-child(6) > div.button-ctrl input{
+  display: inline-block;
+  width: 45%;
+}
+
+div[formarrayname = 'tags'],
+div[formarrayname = 'imagesForPost']{
+  margin: 0.5rem 0;
+  display: inline-block;
+  width: 45%;
+}
+
+#blog-manage-c label{
+  display: block;
+  text-align: left;
+  margin: 0.5rem 0.5rem;
+}
+
+#blog-manage-c input{
+  display: inline-block;
+  width: 98%;
+}
+
+#blog-manage-c textarea[name ='excerpt'],
+#blog-manage-c textarea[name ='section']{
+  display: block;
+  width: 98%;
+  margin: 0.5rem auto;
+  resize: vertical;
+}
+
+#blog-manage-c button[type = 'submit']{
+  display: block;
+  margin: 1rem auto;
+  width: 40%;
+  background: #333;
+  color: #fff;
+}
+
+#blog-manage-d span{
+  color: #fff;
+  background: darkred;
+}
+
+#blog-manage-d{
+  padding-bottom: 2rem;
+}
+
+#blog-manage-d h2{
+  text-align: center;
+}
+
+#blog-manage-d button{
+  display: block;
+  margin: 1rem auto;
+  width: 75%;
+  border-bottom: 2px solid #333;
+}
+
+@media(max-width: 960px){
+  h2{
+    width: 75%;
+    display: block;
+    margin: auto;
+  }
+
+}
+
+
+.btn-group{
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.btn-group button{
+  background: #9caace;
+  color: #fff;
+  height: 30px;
+}

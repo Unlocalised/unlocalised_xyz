@@ -1,0 +1,6 @@
+
+<a (click) = "isExternal && isLinked ? openLink(link) : null" [routerLink] = "isExternal && isLinked ? null : link" (mouseenter) ="state = 'active'"  [@bounceIcon]= 'state' (@bounceIcon.done) = "state = 'initial'" >
+  <mat-icon aria-hidden="true" attr.aria-label="{{infoLabel}}">
+    <i class="{{iconClass}}"></i>
+  </mat-icon>
+</a>

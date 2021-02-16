@@ -1,0 +1,47 @@
+<section fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxFlex = "100">
+  <app-info-section
+  titleSize = 'h1'
+  titleText = 'Blog:'
+  paragraphText = 'Here you will anything from some of the more nuanced topics or discoveries made during
+  experimentation with each technology, to things that I found interesting and are worth talking about.
+   Feel free to use the filters to narrow down the blogs to the technologies you wish to see.'
+  backgroundImage = 'assets/blog.jpg'
+  imageAlt = 'pencil-image'
+  textColor ="white"
+  fxFlex = "100"
+  [showInitially] = "true"></app-info-section>
+
+  <section fxLayout = "row " fxLayoutAlign = "space-evenly center" fxFlex = "100" class = "blog-filters">
+    <div fxLayout = "row" fxLayoutAlign = "space-around center" fxFlex = "100">
+      <mat-form-field class="blog-filter-list" fxFlex = "80">
+        <mat-chip-list #chipList aria-label="Blog filter selection">
+          <mat-chip
+            *ngFor="let filter of currentFilters"
+            [selectable]="selectable"
+            [removable]="removable"
+            (removed)="remove(filter)">
+            {{filter}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input
+            placeholder="Select some filters to alter the blog posts which show"
+            #filterInput
+            [formControl]="filterCtrl"
+            [matAutocomplete]="auto"
+            [matChipInputFor]="chipList"
+            [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            (matChipInputTokenEnd)="add($event)">
+        </mat-chip-list>
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+          <mat-option *ngFor="let filter of filteredOptions | async" [value]="filter">
+            {{filter}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </section>
+  <section fxLayout = "row" fxFlex = "100" class = "blog-posts" fxLayoutAlign = "space-evenly center">
+    <app-blog-list [blogInclusions] = "currentFilters" [inclusionsLength] = "currentFilters.length"></app-blog-list>
+  </section>
+
+</section>

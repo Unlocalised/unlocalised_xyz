@@ -1,0 +1,206 @@
+::ng-deep .mat-progress-bar-fill::after {
+  background-color: rgb(124, 255, 119);
+}
+
+::ng-deep .skill-progress:hover .mat-progress-bar-fill::after {
+  animation: fading 0.5s infinite;
+  -webkit-animation: fading 0.5s infinite;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+  background: white;
+
+}
+
+::ng-deep .mat-progress-bar {
+  background-color: transparent;
+}
+
+section.character-sheet-experience{
+  margin-top:1rem;
+}
+
+section.character-inventory{
+  margin-bottom: 1rem;
+  background: #4a0808;
+  border-radius: 5px;
+}
+
+.header-tile{
+
+  height: 90px;
+  min-width: 60px;
+  background-color: rgb(182, 163, 163);
+  float: none;
+  display: inline-block;
+  box-shadow: inset 1px 1px 1px 1px rgba(255,255,255, .46), inset -1px -1px 1px 1px rgba(0,0,0, .26);
+  margin: 0.5px;
+  border: 1px solid rgba(0, 0, 0, 0.65);
+
+}
+
+.header-tile:hover{
+  animation: fading 0.5s infinite;
+  -webkit-animation: fading 0.5s infinite;
+}
+
+section.character-inventory mat-card{
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+section.character-inventory img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width:100%;
+}
+
+.header-tile img {
+  -webkit-transition: -webkit-transform .8s ease-in-out;
+  transition:         transform .8s ease-in-out;
+}
+.header-tile img:hover {
+  -webkit-transform: rotate3d(0, 1, 0, 360deg);
+  transform: rotate3d(0, 1, 0, 360deg);
+}
+
+
+app-info-section{
+  height: 50vh;
+  overflow: hidden;
+}
+
+mat-progress-bar {
+ height: 0.7rem;
+ margin-top: 0.4rem;
+}
+
+
+div.skill span, div.exp span{
+  border: 1px solid black;
+  background-color: black;
+  color:whitesmoke;
+  text-align:center;
+  font-family: 'Press Start 2P', cursive;
+  position: relative;
+}
+
+.skill{
+  margin-bottom: 1rem;
+}
+
+.skills-intro{
+  padding-bottom: 1rem;
+  font-family: 'Press Start 2P', cursive;
+}
+
+div.exp{
+  padding-bottom: 1rem;
+}
+section.experience-details{
+  background-color: #f2d7ac;
+  z-index: 1;
+  font-family: 'Press Start 2P', cursive;
+
+}
+section.character-sheet-skills{
+  padding: 0.6rem 1em;
+  margin:auto;
+  margin-top: 0.5rem;
+  background-color: #f5ce8f;
+  border: 5px dashed goldenrod; border-radius: 5px;
+}
+
+section.character-sheet-experience{
+  border: 5px dashed goldenrod; border-radius: 5px;
+  background-color: #f5ce8f;
+  margin:auto;
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+}
+
+section.character-sheet-experience span{
+ padding-left: 1em;
+}
+
+section.character-sheet-image{
+  border: 5px dashed goldenrod; border-radius: 5px;
+  background-color: #f5ce8f;
+  margin-top: 0.5rem;
+  margin-left: 0.4em;
+}
+
+section.character-sheet-image img{
+  border: 2px solid steelblue; border-radius: 5px;
+}
+
+section.character-sheet-experience .one ::ng-deep .mat-progress-bar-fill::after{
+  background-color: green;
+}
+section.character-sheet-experience .one:hover ::ng-deep .mat-progress-bar-fill::after{
+  background-color: green;
+  animation: fading 0.5s infinite;
+  -webkit-animation: fading 0.5s infinite;
+}
+section.character-sheet-experience .two ::ng-deep .mat-progress-bar-fill::after{
+  background-color: yellow;
+
+}
+section.character-sheet-experience .two:hover ::ng-deep .mat-progress-bar-fill::after{
+  background-color: yellow;
+  animation: fading 0.5s infinite;
+  -webkit-animation: fading 0.5s infinite;
+}
+
+div.skill span::after {
+  color: black;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0.95rem;
+  width: 500%;
+  height: 0.35rem;
+  background: black;
+  max-width: 190%;
+  left: 100%;
+}
+
+div.exp span::after {
+  color: black;
+  display: block;
+  content: '';
+  position: absolute;
+  top: 0.95rem;
+  width: 5000%;
+  height: 0.35rem;
+  background: black;
+  max-width: 2000%;
+  left: 100%;
+}
+/deep/ .info-tooltip{
+
+  width:90%;
+  text-align: center;
+  font-family: 'Press Start 2P', cursive;
+  border: 1px dashed goldenrod; border-radius: 5px;
+  background: black;
+}
+
+
+
+@keyframes fading {
+  0%   { background: grey; }
+  33%  { background: lightgray; }
+  66%  { background: white; }
+  100% { background: grey; }
+}
+@media screen and (max-width: 960px){
+  div.skill span::after {
+    max-width: 105%;
+  }
+
+  div.exp span::after {
+    max-width: 200%;
+  }
+}

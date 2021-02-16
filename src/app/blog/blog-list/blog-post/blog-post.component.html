@@ -1,0 +1,16 @@
+<mat-card class="blog-post" fxFlex = "90" fxFlex.lt-md = "90" routerLink = "/blog/{{currentIndex}}">
+  <mat-card-header>
+    <div mat-card-avatar class="post-image"></div>
+    <mat-card-title>{{postItem.title}}</mat-card-title>
+    <mat-card-subtitle>{{postItem.subtitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src] ="postItem.mainBlogImagePath" alt="blog-post-primary-image">
+  <mat-card-content>
+    <p>
+      {{postItem.excerpt}}
+    </p>
+    <mat-chip-list aria-label="blog-tags" fxLayoutAlign="space-around center" >
+      <mat-chip *ngFor = "let tag of postItem.tags">{{tag}}</mat-chip>
+    </mat-chip-list>
+  </mat-card-content>
+</mat-card>

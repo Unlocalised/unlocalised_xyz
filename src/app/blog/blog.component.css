@@ -1,0 +1,15 @@
+#overlay {
+  position:absolute;
+  left:auto;
+  top: 0;
+  border: 3px double rgba(0,0,0,0.3);
+  border-radius: 14px;
+  width: 100%;
+  height: 550px;
+  background-color: gray;
+}
+
+mat-card{
+  cursor: pointer;
+  z-index: 9;
+}

@@ -1,0 +1,148 @@
+<section id="project-edit-a" class="project-control-panel">
+  <div class="container">
+    <h2>Manage Projects</h2>
+    <div class="button-panel-group">
+      <button mat-raised-button (click) = "onBeginAdding()" class = "add">Add a new project</button>
+      <button mat-raised-button (click) = "onBeginRemoval()" class = "remove">Remove a project</button>
+      <button mat-raised-button (click) = "onBeginUpdate()" class = "update">Update a project</button>
+    </div>
+  </div>
+</section>
+
+<!-- Section D:  Edit Project -->
+<section id="project-edit-d" class="project-details-edit" *ngIf = "isEditing">
+  <div class="container">
+    <h2>Please select a project to edit</h2>
+    <button  mat-raised-button type = "button" class = "update" *ngFor = "let project of fetchedProjects" (click) = "onEditProject(project)">{{project.summaryTitle}}</button>
+  </div>
+  <h2 *ngIf= "isEditing"> Currently editing {{editingProject ? '' : 'no'}} project {{editingProject ? editingProject.summaryTitle : ''}}</h2>
+</section>
+
+<!-- Section B : Add Project details -->
+<section id="project-edit-b" class="project-details-add" *ngIf = "isAdding || isEditing">
+  <div class="container">
+    <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="proj_summary">Project Summary</label>
+        <textarea name="proj_summary" id="proj_summary" cols="30" rows="20" formControlName = "proj_summary"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="summary_detail">Project Summary Details</label>
+        <textarea name="summary_detail" id="summary_detail" cols="30" rows="20" formControlName = "summary_detail"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="summary_image">Project Summary Image Path</label>
+        <input type = "text" name="summary_image" id="summary_image" formControlName = "summary_image">
+      </div>
+
+      <div class="form-group" [formGroup]="carouselImages">
+        <label>Carousel Images</label>
+        <button mat-raised-button type = "button" (click) = "addCarouselImage()">Add Carousel Image</button>
+        <button mat-raised-button type = "button" (click) = "removeCarouselImage()">Remove Carousel Image</button>
+        <div class="testimonial" *ngFor="let carouselImg of carouselImages.controls; let i = index">
+          <input type = "text" [formControlName] = "i" >
+        </div>
+
+      </div>
+
+      <div class="form-group">
+        <label for="proj_quote">Project Quote</label>
+        <input type = "text" name="proj_quote" id="proj_quote" formControlName = "proj_quote">
+      </div>
+
+      <div class="form-group" [formGroup]="techsUsed">
+        <label >Technologies Used</label>
+        <button mat-raised-button type = "button" (click) = "addTechUsed()">Add Technologies Used</button>
+        <button mat-raised-button type = "button" (click) = "removeTechUsed()">Remove Technologies Used</button>
+        <div class="testimonial" *ngFor="let tech of techsUsed.controls; let i = index">
+          <input type = "text" [formControlName] = "i" >
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="proj_cite">Quote Citation</label>
+        <input name="proj_cite" id="proj_cite" formControlName = "proj_cite">
+      </div>
+
+      <div class="form-group">
+          <label>Moods</label>
+          <button mat-raised-button type ="button" (click) = "addMood()">Add Mood</button>
+          <button mat-raised-button type ="button" (click) = "removeMood()">Remove Mood</button>
+      </div>
+      <div *ngFor="let mood of moods.controls; let i = index">
+          <div class="form-group">
+              <h4 class="card-title">Mood {{i + 1}}</h4>
+              <div [formGroup]="mood" class="form-row">
+                  <div class="form-group col-6">
+                      <label>Description</label>
+                      <input type="text" formControlName="moodDesc" class="form-control"/>
+                  </div>
+                  <div class="form-group col-6">
+                      <label>Value</label>
+                      <input type="text" formControlName="moodVal" class="form-control"/>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="form-group" [formGroup]="testimonials">
+        <label for="testimonials">Testimonials</label>
+        <button mat-raised-button type = "button" (click) = "addTestimonial()">Add Testimonial</button>
+        <button mat-raised-button type = "button" (click) = "removeTestimonial()">Remove Testimonial</button>
+        <div class="testimonial" *ngFor="let testi of testimonials.controls; let i = index">
+          <input type = "text" [formControlName] = "i" >
+        </div>
+      </div>
+
+      <div class="form-group" [formGroup]="tools">
+        <label for="testimonials">Tools Used</label>
+        <button mat-raised-button type = "button" (click) = "addToolUsed()">Add Tool</button>
+        <button mat-raised-button type = "button" (click) = "removeToolUsed()">Remove Tool</button>
+        <div class="testimonial" *ngFor="let tool of tools.controls; let i = index">
+          <input type = "text" [formControlName] = "i" >
+        </div>
+      </div>
+
+      <div class="project-links">
+        <div class="form-group">
+          <label for="source">Source Code Link</label>
+          <input type="text" formControlName = "source_code">
+          <label for="blog_post">Blog Post Link</label>
+          <input type="text" formControlName = "blog_post">
+          <label for="external_site">Demo Site Link</label>
+          <input type="text" formControlName = "external_site">
+        </div>
+      </div>
+
+      <div class="project-info">
+        <div class="form-group">
+          <label for="background">Background/Motivation</label>
+          <input type="text" formControlName = "background">
+          <label for="challenges">Challenges</label>
+          <input type="text" formControlName = "challenges">
+          <label for="lessons">Lessons</label>
+          <input type="text" formControlName = "lessons">
+          <label for="responsibilities">Responsibilities</label>
+          <input type="text" formControlName = "responsibilities">
+        </div>
+
+        <button mat-raised-button type="submit">{{isEditing ? 'Update project in database' : 'Add project to database'}}</button>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<!-- Section C:  Remove Project -->
+<section id="project-edit-c" class="project-details-remove" *ngIf = "isDeleting">
+  <div class="container">
+    <h2>Please click on a project to delete <span>This cannot be undone</span></h2>
+    <button  mat-raised-button type = "button" class = "remove" *ngFor = "let project of fetchedProjects" (click) = "onRemoveProject(project._id)">{{project.summaryTitle}}</button>
+    <h2 *ngIf = "deletedProject"><span>Project with summary {{deletedProject.summaryTitle}} successfully deleted</span></h2>
+  </div>
+
+</section>
+
+

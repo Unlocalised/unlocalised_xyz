@@ -1,0 +1,42 @@
+.bg {
+  /* The image used */
+  background-image: url("../../assets/lost.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg > mat-card{
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: auto;
+  width: 90vw;
+  height:80vh;
+  top: 10vh;
+}
+
+/deep/ app-footer{
+  display: none;
+}
+
+
+/deep/ app-header{
+  display: none;
+}
+
+h1{
+  text-align: center;
+  padding-top: 15vh;
+}
+
+button{
+  width: 50%;
+  margin-left: 25%;
+  background-color: rgb(156 135 135 / 50%);
+  justify-content: center;
+  white-space: pre-line;
+}

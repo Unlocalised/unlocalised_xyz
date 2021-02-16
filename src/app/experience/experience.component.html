@@ -1,0 +1,46 @@
+<section fxLayout = "row wrap" fxLayoutAlign = "space-enevly center" fxFlex = "100" class = "experience-details">
+  <app-info-section
+  titleSize = 'h1'
+  titleText = 'Experience'
+  paragraphText = 'Here you can find a bit more information about the tools I have experience with and my education background. The theme for this section is also different to the rest of the site as a homage to my lifelong interest of all things gaming'
+  backgroundImage = 'assets/coins.jpg'
+  imageAlt = 'experience-header-image'
+  textColor  = 'black'
+  fxFlex = "100"
+  [showInitially] = "true"></app-info-section>
+
+  <section class="character-sheet-image" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxFlex = "49.5" fxFlex.lt-md = "100">
+    <img src = "assets/characterSheet.jpg" fxFlex = "70">
+  </section>
+  <section class="character-sheet-skills" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxLayoutAlign.lt-md = "space-evenly center" fxFlex = "49.5" fxFlex.lt-md = "99" >
+    <span fxFlex = "100" fxFlex.lt-md = "90" class = "skills-intro" >Character Held Items:</span>
+    <section fxLayout="row wrap" fxLayoutAlign = "center center" class = "character-inventory" fxFlex = "100" fxFlex.lt-md = "100">
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="AWS Solutions Architect - Associate" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/aws.png" fxFill></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+      <mat-card class="header-tile" fxFlex="nogrow" matTooltip="Upcoming" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}"><img src = "assets/awaiting.png" fxFlex = "initial"></mat-card>
+    </section>
+    <section fxLayout="row wrap" fxLayoutAlign = "space-evenly center" class = "character-skills" fxFlex = "100">
+      <span fxFlex = "100" fxFlex.lt-md = "90" class = "skills-intro">Character Stats:</span>
+      <app-skills-list fxFlex = "100"></app-skills-list>
+    </section>
+  </section>
+  <section class="character-sheet-experience" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxFlex = "99.5">
+    <span fxFlex = "100" fxFlex.lt-md = "90" class = "skills-intro">Experience Points:</span>
+    <div class="exp" fxFlex = "90" fxLayout = "row" fxLayoutAlign = "space-evenly center">
+      <span fxFlex = "5" fxFlex.lt-md = "50">EXP:</span>
+      <mat-progress-bar mode="determinate" value="100" fxFlex = "55.575" fxFlex.lt-md = "50" class = "one" matTooltip="University of Reading" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}" aria-label= "university study" (click)="openDialog(1)"></mat-progress-bar>
+      <mat-progress-bar mode="determinate" value="100" fxFlex = "44.425" fxFlex.lt-md = "50" class = "two" matTooltip="Automation Consultants" matTooltipPosition="above" [matTooltipClass]="{'info-tooltip': true}" aria-label= "consultancy experience" (click)="openDialog(2)"></mat-progress-bar>
+    </div>
+  </section>
+</section>
+
+
+
+

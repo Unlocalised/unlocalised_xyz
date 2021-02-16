@@ -1,0 +1,9 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* HTML and body take up the full height of the screen; Configure default font for body text  */
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+.skill-detail-dialog .mat-dialog-container {
+  padding:0;
+}

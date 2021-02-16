@@ -1,0 +1,51 @@
+<section fxLayout = "row wrap" fxLayoutAlign = "start center" fxFlex = "100" class = "project-details" *ngIf = "projectHasLoaded">
+    <app-info-section
+  titleSize = 'h1'
+  titleText = '{{shownProject.summaryTitle}}'
+  paragraphText = '{{shownProject.summaryDetail}}'
+    backgroundImage = '{{shownProject.projectSummaryImagePath}}'
+    imageAlt = 'project-image'
+    textColor ="white"
+    fxFlex = "100"
+    [showInitially] = "true"></app-info-section>
+
+    <section fxLayout="column" fxLayoutAlign="start center" fxFlex = "4" fxFlex.lt-md = "100">
+      <a routerLink = "/projects" fxHide.lt-md><i class = "fas fa-angle-left fa-3x"></i></a>
+      <a routerLink = "/projects" fxShow.lt-md fxHide.gt-sm><i class = "fas fa-angle-up fa-3x"></i></a>
+    </section>
+    <section class = "project-details" fxLayout="column" fxLayoutAlign="center center" fxFlex = "35" fxFlex.lt-lg = "100">
+      <h3>Background/motivation:</h3>
+      <p> {{shownProject.backgroundMotivationText}}</p>
+      <h3>Challenges:</h3>
+      <p> {{shownProject.challengesText}}</p>
+      <h3>Lessons learned/ Resources</h3>
+      <p>{{shownProject.lessonsText}}</p>
+      <h3>Responsibilities</h3>
+      <p>{{shownProject.responsibilitiesText}}</p>
+      <h3>Testimonials</h3>
+      <p *ngFor = "let testimonial of shownProject.testimonials">{{testimonial}}</p>
+    </section>
+    <span fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex = "6" fxHide.lt-md></span>
+    <section class = "project-carousel" fxLayout="column" fxLayoutAlign="space-evenly center" fxFlex = "51" fxFlex.lt-lg = "100" id = "cf4a" (mouseover) = "displayOverlay()" (mouseout) = "hideOverlay()">
+      <div class="img-wrapper" fxFill>
+        <ng-container *ngFor = "let image of shownProject.carouselImagePaths; let i = index;">
+          <img [src] = "image">
+        </ng-container>
+      </div>
+      <div id="overlay" [@overlayAnimation] = "state">
+        <mat-chip-list aria-label="tools" class = "center">
+          <mat-chip *ngFor = "let tool of shownProject.toolsUsed">{{tool}}</mat-chip>
+        </mat-chip-list>
+      </div>
+      <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxFlex = "100" class = "project-actions">
+        <button mat-raised-button fxFlex = "25" fxFlex.lt-lg = "33" *ngIf = "shownProject.sourceCodeLink !== '|'" (click) = "openLink(shownProject.sourceCodeLink)">Source Code</button>
+        <button mat-raised-button fxFlex = "25" fxFlex.lt-lg = "33" *ngIf = "shownProject.blogPostLink !== '|'" (click) = "openLink(shownProject.blogPostLink)">Blog Post</button>
+        <button mat-raised-button fxFlex = "25" fxFlex.lt-lg = "33" *ngIf = "shownProject.demoSiteLink !== '|'" (click) = "openLink(shownProject.demoSiteLink)">Visit the Site</button>
+      </div>
+    </section>
+</section>
+<div class="wrapper" *ngIf = "!projectHasLoaded">
+  <div  class="lds-ripple"><div></div><div></div></div>
+  <p>Project is loading. Please wait</p>
+</div>
+

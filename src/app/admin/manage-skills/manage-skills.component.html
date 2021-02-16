@@ -1,0 +1,98 @@
+<div class="main">
+  <section id="skill-manage-a">
+    <div class="container">
+      <h2>Manage Skills</h2>
+      <div class="button-panel-group">
+        <button mat-raised-button (click) = "onAddSkill()" class = "add">Add a new skill</button>
+        <button mat-raised-button (click) = "onRemoveSkill()" class = "remove">Remove a skill</button>
+        <button mat-raised-button (click) = "onUpdateSkill()" class = "update">Update a skill</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section B:  Edit Skills -->
+  <section id="skill-manage-b" class="skill-details-edit" *ngIf = "isEditing">
+    <h2>Please select a skill to edit</h2>
+    <div class="container">
+      <button  mat-raised-button type = "button" class = "update" *ngFor = "let skill of fetchedSkills" (click) = "populateSkillData(skill)">{{skill.skillName}}</button>
+    </div>
+    <h2 *ngIf= "isEditing"> Currently editing {{actionedSkill ? '' : 'no'}} skill {{actionedSkill ? actionedSkill.skillName : ''}}</h2>
+  </section>
+
+  <!-- Section C : Add new skill details -->
+  <section id="skill-manage-c" class="skill-details-add" *ngIf = "isAdding || isEditing">
+    <div class="container">
+      <form [formGroup]="skillForm" (ngSubmit)="onSubmit()">
+
+        <div class="skill-group">
+          <label for="skillName">Skill name:</label>
+          <input type="text" name = "skillName" formControlName = "skillName">
+
+          <label for="skillLevel">Skill level</label>
+          <input type="text" name = "skillLevel" formControlName = "skillLevel">
+        </div>
+
+        <div class="skill-group">
+          <label for="skillNumber">Skill number:</label>
+          <input type="text" name = "skillNumber" formControlName = "skillNumber">
+
+
+          <label for="skillImagePath">Skill image</label>
+          <input type="text" name = "skillImagePath" formControlName = "skillImagePath">
+        </div>
+
+        <div class="skill-details">
+          <label>Achievements for the skill:</label>
+          <div class="button-ctrl">
+            <button  mat-raised-button type = "button" class = "add" (click) = "addAchievement()">Add achievement</button>
+            <button  mat-raised-button type = "button" class = "remove" (click) = "removeAchievement()">Remove achievement</button>
+          </div>
+          <div formArrayName = "skillAchievements" *ngFor = "let achievement of skillAchievements.controls; let i = index">
+            <div [formGroupName] = "i">
+              <textarea type="text" formControlName = "title"></textarea>
+              <textarea type="text" formControlName = "info"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-details">
+          <label>Details for the skill:</label>
+
+          <div class="button-ctrl">
+            <button  mat-raised-button type = "button" class = "add" (click) = "addSkillDetail()">Add detail</button>
+            <button  mat-raised-button type = "button" class = "remove" (click) = "removeSkillDetail()">Remove detail</button>
+          </div>
+
+          <div formArrayName = "skillDetails" *ngFor = "let detail of skillDetails.controls; let i = index">
+            <div [formGroupName] = "i">
+              <textarea type="text" formControlName = "title"></textarea>
+              <textarea type="text" formControlName = "info"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="work-history">
+          <label for="isWorkHistory">Is work history:</label>
+          <input type = "checkbox" name = "isWorkHistory" formControlName = "isWorkHistory">
+        </div>
+
+
+        <button mat-raised-button type="submit">{{isEditing ? 'Update skill in database' : 'Add skill to database'}}</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Section D:  Remove Skill -->
+  <section id="skill-manage-d" class="skill-details-remove" *ngIf = "isDeleting">
+    <div class="container">
+      <h2>Please click on a skill to delete <span>This cannot be undone</span></h2>
+      <button  mat-raised-button type = "button" class = "remove" *ngFor = "let skill of fetchedSkills" (click) = "removeSkill(skill._id)">{{skill.skillName}}</button>
+      <h2 *ngIf = "deletedSkill"><span>Skill with summary {{deletedSkill.skillName}} successfully deleted</span></h2>
+    </div>
+
+  </section>
+
+
+</div>
+

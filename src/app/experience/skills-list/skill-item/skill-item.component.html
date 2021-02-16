@@ -1,0 +1,3 @@
+<div class="skill" fxFlex = "100" fxLayout = "row" fxLayoutAlign = "space-evenly center">
+  <span fxFlex = "35" fxFlex.lt-md = "50">{{skillItem.skillName}}:</span><mat-progress-bar class = "skill-progress" mode="determinate" [value]="skillItem.skillLevel" fxFlex = "65" fxFlex.lt-md = "50" (click)="openDialog()"></mat-progress-bar>
+</div>

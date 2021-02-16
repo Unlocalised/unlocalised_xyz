@@ -1,0 +1,30 @@
+<app-info-section
+titleSize = 'h1'
+titleText = 'Projects'
+paragraphText = "Welcome to the projects page! Here you can find a list of all the projects that have been worked on and completed. In each project,
+I try and say a little bit about the technologies used, some problems I had and their resolutions (particularly the ones that took the longest to solve)<break>.
+  On top of that I'll also link to any associated blog content, mention resources that I found helpful building the project, (such as Udemy Courses, Stack Overflow
+   answers and of course the occasional look at the official docs) or a link to GitHub repositories if applicable so you can take the code and grab a head start with the topic.
+  "
+  backgroundImage = "assets/pencils.jpg"
+  imageAlt = "factory"
+  [showInitially] = "true"
+  textColor ="white"></app-info-section>
+
+<section class = "projects-list">
+  <app-project-list></app-project-list>
+</section>
+
+<section class = "other-projects" style = "text-align: center;">
+  <div fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxFlex = "100" >
+    <h3 fxFlex = "100" fxFlex.lt-sm = "70"> Projects/hobbies I undertake aren't always of a technical nature, with what I do being greatly influenced by my hobbies, take a look at a few of them below:</h3>
+    <div fxLayout="row" fxLayout.lt-md = "row wrap" fxLayoutAlign="center center" fxLayoutAlign.lt-md="space-evenly center" fxFlex = "66" fxFlex.lt-sm = "100%">
+      <app-social-icon matTooltip ="Gaming" matTooltipPosition = "above" iconClass = "fa fa-gamepad fa-2x" infoLabel = "Interest: Gaming" fxFlex = "33" fxFlex.lt-sm = "50%"></app-social-icon>
+      <app-social-icon matTooltip ="Japanese" matTooltipPosition = "above" iconClass = "fa fa-language fa-2x" infoLabel = "Interest: Learning Japanese" fxFlex = "33" fxFlex.lt-sm = "50%"></app-social-icon>
+      <app-social-icon matTooltip ="Drumming" matTooltipPosition = "above" iconClass = "fas fa-drum fa-2x" infoLabel = "Interest: Drumming" fxFlex = "33" fxFlex.lt-sm = "50%" ></app-social-icon>
+      <app-social-icon matTooltip ="Fitness" matTooltipPosition = "above" iconClass = "fas fa-dumbbell fa-2x" infoLabel = "Interest: Gym/Fitness" fxFlex = "33" fxFlex.lt-sm = "50%"></app-social-icon>
+      <app-social-icon matTooltip ="Cooking" matTooltipPosition = "above" iconClass = "fas fa-hamburger fa-2x" infoLabel = "Interest: Food/Cooking" fxFlex = "33" fxFlex.lt-sm = "50%"></app-social-icon>
+      <app-social-icon matTooltip ="Stocks theory" matTooltipPosition = "above" iconClass = "fas fa-chart-line fa-2x" infoLabel = "Interest: Stocks" fxFlex = "33" fxFlex.lt-sm = "50%"></app-social-icon>
+    </div>
+  </div>
+</section>

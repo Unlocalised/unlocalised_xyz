@@ -1,0 +1,67 @@
+section.roadmap-container{
+  position: relative;
+  padding-top: 1%;
+  height: 600px;
+  width: 100%;
+  z-index: 0;
+
+}
+
+app-roadmap-node{
+  z-index: 0;
+}
+
+mat-progress-bar{
+  z-index: -1;
+  position: static;
+}
+
+
+/* TODO: This needs to be different when horizontally displaying - Add media query for this*/
+section.roadmap-container app-roadmap-node:nth-of-type(2n + 1){
+  transform: translateX(-25vw);
+}
+
+section.roadmap-container app-roadmap-node:nth-of-type(2n){
+  transform: translateX(25vw);
+}
+
+
+@media screen and (min-width: 1280px){
+  section.roadmap-container button:nth-of-type(2n){
+    transform: translateY(20vh);
+  }
+
+  section.roadmap-container button:nth-of-type(2n + 1){
+    transform: translateY(-20vh);
+  }
+  section.roadmap-container app-roadmap-node:nth-of-type(2n){
+    transform: translateY(20vh);
+  }
+
+  section.roadmap-container app-roadmap-node:nth-of-type(2n + 1){
+    transform: translateY(-20vh);
+  }
+  section.roadmap-container mat-progress-bar{
+    position: absolute;
+    max-width: 25%;
+  }
+}
+
+/* No greater than 1680px, no less than 1280px */
+@media (max-width:1680px) and (min-width:1280px) {
+  section.roadmap-container mat-progress-bar{
+    position: absolute;
+    max-width: 29%;
+  }
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+
+}
+
+::ng-deep .mat-progress-bar-buffer {
+}
+::ng-deep .mat-progress-bar {
+}
+

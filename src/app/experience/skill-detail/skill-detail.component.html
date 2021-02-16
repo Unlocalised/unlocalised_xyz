@@ -1,0 +1,27 @@
+<section class = "skill-detail-dialog" fxLayout="row wrap" fxLayoutAlign="space-evenly center" fxFlex = "100">
+  <section  fxFlex = "100" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxLayoutAlign.lt-md = "space-evenly center">
+    <section class="skill-image" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxFlex = "48" fxFlex.lt-md = "100">
+      <img [src] = "data.skillImagePath" fxFlex = "70">
+    </section>
+    <section class="skill-summary" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxLayoutAlign.lt-md = "space-evenly center" fxFlex = "48" fxFlex.lt-md = "99" >
+      <h2 fxFlex = "90" fxFlex.lt-md = "90" class = "skill-title" >No.{{data.skillNumber}} | Lvl.{{data.skillLevel}} /</h2>
+      <h2 fxFlex = "90" fxFlex.lt-md = "90" class = "skill-info" >{{data.skillName}}</h2>
+    </section>
+  </section>
+  <section class="skill-breakdown" fxLayout = "row wrap" fxLayoutAlign = "space-evenly center" fxLayoutAlign.lt-md = "space-evenly center" fxFlex = "100" fxFlex.lt-md = "99" >
+    <section class="skill-achievements" fxLayout = "column wrap" fxLayoutAlign = "space-evenly start" fxLayoutAlign.lt-md = "space-evenly start" fxFlex = "46" fxFlex.lt-md = "99">
+      <div fxLayout = "column wrap" fxLayoutAlign = "space-evenly start" fxLayoutAlign.lt-md = "space-evenly start" fxFlex = "46" fxFlex.lt-md = "99" *ngFor = "let acheivement of data.skillAchievements">
+        <span fxFlex = "90" fxFlex.lt-md = "90" class = "skill-title">{{acheivement.title}}</span>
+        <span fxFlex = "90" fxFlex.lt-md = "90" class = "skill-info">{{acheivement.info}}</span>
+      </div>
+    </section>
+    <section class="skill-details" fxLayout = "column wrap" fxLayoutAlign = "space-evenly start" fxLayoutAlign.lt-md = "space-evenly start" fxFlex = "48" fxFlex.lt-md = "99" >
+      <div fxLayout = "column wrap" fxLayoutAlign = "space-evenly start" fxLayoutAlign.lt-md = "space-evenly start" fxFlex = "46" fxFlex.lt-md = "99" *ngFor = "let detail of data.skillDetails">
+        <span fxFlex = "90" fxFlex.lt-md = "90" class = "skill-title">{{detail.title}}</span>
+        <span fxFlex = "90" fxFlex.lt-md = "90" class = "skill-info">{{detail.info}}</span>
+      </div>
+    </section>
+    <h6 fxFlex.lt-md = "80" fxFlex = "100">Dialog Inspired by the now ancient inventory screens from Pokemon Gold and Silver</h6>
+  </section>
+</section>
+

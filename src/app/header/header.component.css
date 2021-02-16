@@ -1,0 +1,75 @@
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+header{
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.1);
+  padding-bottom: 1.6rem;
+}
+.sticky {
+  position: fixed;
+  width: 100%;
+}
+
+.header-drawer-expanded{
+  height: 200vh;
+}
+
+.header-menu-items a{
+  margin-top: 1%;
+  z-index: 10;
+
+}
+
+.header-menu-items a:hover{
+  margin-top: 1%;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.header-menu-items span{
+  margin-top: 1%;
+  z-index: 10;
+}
+
+img[id = 'logo']{
+  left:0;
+  top: 0;
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 80%;
+}
+
+.img-wrap {
+  width: 80px;
+  height: 80px;
+  position: fixed;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+}
+
+button[mat-fab]{
+  top:0;
+  background-color: transparent;
+
+}
+
+header{
+  position: absolute;
+  width:100%;
+}
+
+header mat-sidenav-container{
+  position: absolute;
+  z-index: 10;
+}
+
+header button[mat-icon-button]{
+  position: absolute;
+
+
+}
+
+@media screen and (max-width: 960px){
+  header{
+    padding-bottom: 0;
+  }
+}
